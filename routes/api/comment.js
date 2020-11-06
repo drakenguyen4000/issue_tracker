@@ -6,7 +6,7 @@ const Comment = require("../../models/Comment");
 const { json } = require("body-parser");
 const { response } = require("express");
 const resData = require("../../functions/functions");
-
+  
 //Get Comments   
 router.get("/:id/comments", (req, res, next) => {
   Issue.findById(req.params.id)
