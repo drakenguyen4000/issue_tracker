@@ -1,5 +1,4 @@
 const express = require("express");
-// const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
@@ -13,6 +12,9 @@ const path = require("path");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+//environment variables
+require("dotenv").config();
 
 //Connect to MongoDB
 mongoose
