@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+const { expressCspHeader, INLINE, NONE, SELF } = require("express-csp-header");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
@@ -27,8 +27,20 @@ mongoose
 
 mongoose.set("useFindAndModify", false);
 
-app.use(cors());
-
+app.use(
+  expressCspHeader({
+    directives: {
+      "default-src": [NONE],
+      "img-src": [SELF, "data:", "favicon.ico"],
+      // 'default-src': [SELF],
+      "script-src": [SELF, INLINE, "somehost.com"],
+      "style-src": [SELF, "mystyles.net"],
+      // 'img-src': ['data:', 'images.com'],
+      "worker-src": [NONE],
+      "block-all-mixed-content": true,
+    },
+  })
+);
 
 //CSP
 // app.use(
