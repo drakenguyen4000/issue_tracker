@@ -31,13 +31,13 @@ app.use(
   expressCspHeader({
     directives: {
       "default-src": [NONE],
-      "img-src": [SELF, "data:", "favicon.ico"],
       // 'default-src': [SELF],
-      // "script-src": [SELF, INLINE, "somehost.com"],
-      // "style-src": [SELF, "mystyles.net"],
       // 'img-src': ['data:', 'images.com'],
-      // "worker-src": [NONE],
-      // "block-all-mixed-content": true,
+      "img-src": [SELF, "data:", "favicon.ico"],
+      "script-src": [NONE],
+      "style-src": [NONE],
+      "worker-src": [NONE],
+      "block-all-mixed-content": true,
     },
   })
 );
