@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
@@ -8,7 +9,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -28,14 +29,14 @@ mongoose
 mongoose.set("useFindAndModify", false);
 
 //CSP
-app.use(
-  csp({
-    policies: {
-      "default-src": [csp.NONE],
-      "img-src": [csp.SELF, "data:", "favicon.ico"],
-    },
-  })
-);
+// app.use(
+//   csp({
+//     policies: {
+//       "default-src": [csp.NONE],
+//       "img-src": [csp.SELF, "data:", "favicon.ico"],
+//     },
+//   })
+// );
 
 //Use Routes middleware
 app.use("/issues", issues);
