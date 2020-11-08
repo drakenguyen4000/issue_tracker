@@ -33,11 +33,11 @@ app.use(
       "default-src": [NONE],
       "img-src": [SELF, "data:", "favicon.ico"],
       // 'default-src': [SELF],
-      "script-src": [SELF, INLINE, "somehost.com"],
-      "style-src": [SELF, "mystyles.net"],
+      // "script-src": [SELF, INLINE, "somehost.com"],
+      // "style-src": [SELF, "mystyles.net"],
       // 'img-src': ['data:', 'images.com'],
-      "worker-src": [NONE],
-      "block-all-mixed-content": true,
+      // "worker-src": [NONE],
+      // "block-all-mixed-content": true,
     },
   })
 );
