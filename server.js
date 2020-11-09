@@ -1,5 +1,4 @@
 const express = require("express");
-const { expressCspHeader, INLINE, NONE, SELF } = require("express-csp-header");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
@@ -26,31 +25,6 @@ mongoose
   .catch((err) => console.log(err));
 
 mongoose.set("useFindAndModify", false);
-
-app.use(
-  expressCspHeader({
-    directives: {
-      "default-src": [NONE],
-      // 'default-src': [SELF],
-      // 'img-src': ['data:', 'images.com'],
-      "img-src": [SELF, "data:", "favicon.ico"],
-      "script-src": [NONE],
-      "style-src": [NONE],
-      "worker-src": [NONE],
-      "block-all-mixed-content": true,
-    },
-  })
-);
-
-//CSP
-// app.use(
-//   csp({
-//     policies: {
-//       "default-src": [csp.NONE],
-//       "img-src": [csp.SELF, "data:", "favicon.ico"],
-//     },
-//   })
-// );
 
 //Use Routes middleware
 app.use("/issues", issues);
