@@ -83,8 +83,8 @@ const Comment = (props) => {
       {comment.isLoading ? (
         <Loading message="Loading..." />
       ) : (
-        <div class="row mt-4">
-          <div class="mx-auto card col-lg-8 col-md-11 px-0">
+        <div className="row mt-4">
+          <div className="mx-auto card col-lg-8 col-md-11 px-0">
             <div className="card-header thead">
               <h2 className="text-center">Discussion</h2>
             </div>
@@ -96,18 +96,18 @@ const Comment = (props) => {
                     name="post"
                     onChange={handleChange}
                     value={comment.post}
-                    maxlength="1000"
+                    maxLength="1000"
                   />
                 </FormGroup>
                 <div className="d-flex justify-content-end">
                   <Button className="btn-style" size="sm" color="dark">
-                    Comment <i class="far fa-edit"></i>
+                    Comment <i className="far fa-edit"></i>
                   </Button>
                 </div>
               </Form>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">{commentList()}</li>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">{commentList()}</li>
             </ul>
           </div>
         </div>

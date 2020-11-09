@@ -32,8 +32,8 @@ const IssuesReport = () => {
     const { name, type } = e.target;
     //Update state
     type === "file"
-      ? setIssue({ ...issue, image: e.target.files[0] })
-      : setIssue({ ...issue, [name]: e.target.value });
+      ? setIssue({ image: e.target.files[0] })
+      : setIssue({ [name]: e.target.value });
   };
 
   //Take issues in state and post to backend
@@ -78,7 +78,7 @@ const IssuesReport = () => {
         <Form
           className="col-lg-6 mx-auto"
           onSubmit={onSubmit}
-          enctype="multipart/form-data"
+          encType="multipart/form-data"
         >
           <FormGroup>
             <Label>Title</Label>
@@ -88,7 +88,7 @@ const IssuesReport = () => {
               value={issue.title}
               onChange={handleChange}
               placeholder="Missing Icons"
-              maxlength="25"
+              maxLength="25"
               required
             />
           </FormGroup>
@@ -100,7 +100,7 @@ const IssuesReport = () => {
               onChange={handleChange}
               value={issue.project}
               placeholder="project-4xx"
-              maxlength="25"
+              maxLength="25"
               required
             />
           </FormGroup>
@@ -111,7 +111,7 @@ const IssuesReport = () => {
               name="summary"
               onChange={handleChange}
               value={issue.summary}
-              maxlength="500"
+              maxLength="500"
               required
             />
           </FormGroup>

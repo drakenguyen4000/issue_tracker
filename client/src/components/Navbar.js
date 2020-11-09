@@ -84,7 +84,7 @@ const Navbar = () => {
           <strong>ISSUE</strong> TRACKER
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -92,9 +92,9 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav">
           {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
         </div>
       </Container>

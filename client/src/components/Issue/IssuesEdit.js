@@ -91,7 +91,7 @@ const IssuesEdit = (props) => {
             <Form
               className="col-lg-6 mx-auto"
               onSubmit={onSubmit}
-              enctype="multipart/form-data"
+              encType="multipart/form-data"
             >
               <FormGroup>
                 <Label>Title</Label>
@@ -101,7 +101,7 @@ const IssuesEdit = (props) => {
                   defaultValue={edit.details.title}
                   onChange={handleChange}
                   placeholder="Missing Icons"
-                  maxlength="25"
+                  maxLength="25"
                   required
                 />
               </FormGroup>
@@ -113,7 +113,7 @@ const IssuesEdit = (props) => {
                   onChange={handleChange}
                   defaultValue={edit.details.project}
                   placeholder="project-4xx"
-                  maxlength="25"
+                  maxLength="25"
                   required
                 />
               </FormGroup>
@@ -124,7 +124,7 @@ const IssuesEdit = (props) => {
                   name="summary"
                   onChange={handleChange}
                   defaultValue={edit.details.summary}
-                  maxlength="500"
+                  maxLength="500"
                   required
                 />
               </FormGroup>

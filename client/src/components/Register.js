@@ -67,7 +67,7 @@ const Register = () => {
       <h2 className="text-center">Register</h2>
       <Form
         className="col-lg-6 mx-auto"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
         onSubmit={onSubmit}
       >
         <FormGroup>
@@ -77,7 +77,7 @@ const Register = () => {
             onChange={handleChange}
             name="username"
             value={user.username}
-            maxlength="12"
+            maxLength="12"
             required
           />
         </FormGroup>
@@ -104,7 +104,7 @@ const Register = () => {
               onChange={handleChange}
               name="password"
               value={user.password}
-              maxlength="12"
+              maxLength="12"
               required
             />
           </div>
@@ -117,7 +117,7 @@ const Register = () => {
               onChange={handleChange}
               name="registercode"
               value={user.registercode}
-              maxlength="12"
+              maxLength="12"
               required
             />
           </div>
@@ -129,7 +129,7 @@ const Register = () => {
               name="avatar"
               id="image"
               accept="image/*"
-              maxlength="25"
+              maxLength="25"
             />
           </div>
         </FormGroup>

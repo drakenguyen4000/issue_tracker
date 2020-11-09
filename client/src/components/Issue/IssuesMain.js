@@ -32,7 +32,7 @@ const IssuesMain = () => {
           to={`/issues`}
           className="btn btn-danger btn-sm mr-2 btn-report btn-style"
         >
-          Report Issue <i class="fas fa-bug"></i>
+          Report Issue <i className="fas fa-bug"></i>
         </Link>
       </Container>
       <List title="Issues Tracking List" gen={issue} />

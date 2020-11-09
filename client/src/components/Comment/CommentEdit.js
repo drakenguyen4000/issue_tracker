@@ -68,7 +68,7 @@ const CommentEdit = (props) => {
                 type="textarea"
                 defaultValue={comment.post.text}
                 onChange={handleChange}
-                maxlength="1000"
+                maxLength="1000"
                 className="edit"
               ></Input>
             </FormGroup>

@@ -95,7 +95,7 @@ const Details = (props) => {
                   to={`/issues/${props.match.params.id}/edit`}
                 >
                   <Button className="btn-style" size="sm" color="warning">
-                    Edit <i class="fas fa-eraser"></i>
+                    Edit <i className="fas fa-eraser"></i>
                   </Button>
                 </Link>
               ) : null}
@@ -106,7 +106,7 @@ const Details = (props) => {
                   color="danger"
                   onClick={onDelete}
                 >
-                  Delete <i class="fas fa-trash"></i>
+                  Delete <i className="fas fa-trash"></i>
                 </Button>
               ) : null}
             </div>
@@ -158,7 +158,7 @@ const Details = (props) => {
                       color="success"
                       onClick={updateStatus}
                     >
-                      Status <i class="far fa-folder-open"></i>
+                      Status <i className="far fa-folder-open"></i>
                     </Button>
                   </FormGroup>
                 </Form>
