@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
 const user = require("./routes/api/user");
