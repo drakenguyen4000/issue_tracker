@@ -44,13 +44,6 @@ app.use("/issues", issues);
 app.use("/", user);
 app.use("/issues", comment);
 
-//Error Handling
-app.use(function (err, req, res, next) {
-  res.status(400).json({
-    message: { msgBody: err, msgError: true },
-  });
-});
-
 //Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   //Set static folder
@@ -58,10 +51,17 @@ if (process.env.NODE_ENV === "production") {
 
   app.get("*", (req, res) => {
     // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-    res.sendFile(path.resolve(__dirname + "/client/build/index.html"));
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
 const port = process.env.PORT || 5000;
+
+//Error Handling
+app.use(function (err, req, res, next) {
+  res.status(400).json({
+    message: { msgBody: err, msgError: true },
+  });
+});
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
