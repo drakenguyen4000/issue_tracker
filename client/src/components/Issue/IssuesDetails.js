@@ -111,9 +111,8 @@ const Details = (props) => {
               ) : null}
             </div>
             <h2>Issue Details</h2>
-            <Table className="details-table">
+            {/* <Table className="details-table table"> */}
               <IssuesItem details={issue.details} />
-            </Table>
             <div className="status-assign-group">
               {currentUser._id === issue.details.assigned.id ||
               currentUser.jobtitle === "Lead Engineer" ? (

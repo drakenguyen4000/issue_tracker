@@ -15,8 +15,9 @@ const IssuesItem = (props) => {
   };
 
   return (
-    <div className="row issues-item">
-      <table>
+    <table className="details-table" style={{border: "1px solid gray"}}>
+      <tbody className="row issues-item">
+        <td className=" table">
         <tr>
           <th>Tile</th>
           <td>{props.details.title}</td>
@@ -67,8 +68,10 @@ const IssuesItem = (props) => {
           <th>Deadline</th>
           <td>{props.details.deadline.substring(0, 10)}</td>
         </tr>
-      </table>
-      <table>
+        </td>
+      </tbody>
+      < tbody>
+        <td className="table">
         <tr>
           <th>Image</th>
           <td>
@@ -79,8 +82,9 @@ const IssuesItem = (props) => {
           <th>Summary</th>
           <td>{props.details.summary}</td>
         </tr>
-      </table>
-    </div>
+        </td>
+      </tbody>
+    </table>
   );
 };
 

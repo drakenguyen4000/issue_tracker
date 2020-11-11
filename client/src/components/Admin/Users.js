@@ -41,7 +41,7 @@ const Users = () => {
 
   const userList = () => {
     return user.user.map((user) => {
-      return <UserList userDelete={deleteUser} profile={user} />;
+      return <UserList key={user._id} userDelete={deleteUser} profile={user} />;
     });
   };
 
