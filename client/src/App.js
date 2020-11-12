@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route } from "react-router-dom";
 import IssuesReport from "./components/Issue/IssuesReport";
-import IssuesMain from "./components/Issue/IssuesMain";
+import IssuesList from "./components/Issue/IssuesList";
 import IssuesEdit from "./components/Issue/IssuesEdit";
 import IssuesDetails from "./components/Issue/IssuesDetails";
 import Users from "./components/Admin/Users";
@@ -25,8 +25,8 @@ const App = () => {
         <Message />
           <br/>
           <Route path="/" exact component={Landing} />
-          <Route roles={["admin", "user"]} path="/list" exact component={IssuesMain} />
-          <Route roles={["admin", "user"]} path="/issues" exact component={IssuesReport} />
+          <Route roles={["admin", "user"]} path="/report" exact component={IssuesReport} />
+          <Route roles={["admin", "user"]} path="/issues" exact component={IssuesList} />
           <Route roles={["admin", "user"]} path="/issues/:id/edit" exact component={IssuesEdit} />
           <Route roles={["admin", "user"]} path="/issues/:id" exact component={IssuesDetails} />
           <Route roles={["admin", "user"]} path="/user" exact component={Users} />

@@ -5,7 +5,7 @@ import List from "../SharedComp/List";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
 
-const IssuesMain = () => {
+const IssuesList = () => {
   const [issue, setIssue] = useState({
     list: [],
     isLoading: true,
@@ -40,4 +40,4 @@ const IssuesMain = () => {
   );
 };
 
-export default IssuesMain;
+export default IssuesList;

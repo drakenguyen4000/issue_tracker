@@ -32,7 +32,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-//Index Route 
+//Index Route -- List
 router.get("/", (req, res, next) => {
   //Find all documents in Issue collection
   Issue.find()
