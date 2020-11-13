@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import IssuesReport from "./components/Issue/IssuesReport";
 import IssuesList from "./components/Issue/IssuesList";
 import IssuesEdit from "./components/Issue/IssuesEdit";
@@ -20,7 +20,7 @@ import Message from "./components/Message";
 
 const App = () => {
     return (
-      <Router history={history}>
+      <HashRouter history={history}>
         <Navbar />
         <Message />
           <br/>
@@ -34,7 +34,7 @@ const App = () => {
           <Route roles={["admin", "user"]} path="/issues/:id/comments/:comment_id/edit" exact component={CommentEdit} />
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
-      </Router> 
+      </HashRouter> 
     )  
 }
 
