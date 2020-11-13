@@ -63,7 +63,7 @@ const IssuesReport = () => {
       .post("/issues", formData)
       .then((response) => {
         msgContext.setMessage(response.data.message);
-        history.push("/list");
+        history.push("/issues");
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);

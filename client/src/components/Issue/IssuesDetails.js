@@ -40,7 +40,7 @@ const Details = (props) => {
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
-        history.push("/list");
+        history.push("/issues");
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

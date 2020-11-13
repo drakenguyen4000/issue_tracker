@@ -23,7 +23,7 @@ const Login = () => {
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        history.push("/list");
+        history.push("/issues");
       } else {
         const message = { msgBody: "Login failed!", msgError: true };
         msgContext.setMessage(message);
