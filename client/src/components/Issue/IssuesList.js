@@ -29,7 +29,7 @@ const IssuesList = () => {
     <div>
       <Container className="d-flex justify-content-end">
         <Link
-          to={`/issues`}
+          to={`/report`}
           className="btn btn-danger btn-sm mr-2 btn-report btn-style"
         >
           Report Issue <i className="fas fa-bug"></i>

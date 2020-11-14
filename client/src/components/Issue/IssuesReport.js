@@ -32,8 +32,8 @@ const IssuesReport = () => {
     const { name, type } = e.target;
     //Update state
     type === "file"
-      ? setIssue({ image: e.target.files[0] })
-      : setIssue({ [name]: e.target.value });
+      ? setIssue({ ...issue, image: e.target.files[0] })
+      : setIssue({ ...issue, [name]: e.target.value });
   };
 
   //Take issues in state and post to backend

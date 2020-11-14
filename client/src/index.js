@@ -7,13 +7,11 @@ import AuthProvider from "./context/AuthContext";
 import MsgProvider from "./context/MsgContext";
 
 ReactDOM.render(
-  <React.StrictMode>
   <AuthProvider>
     <MsgProvider>
       <App />
     </MsgProvider>
   </AuthProvider>,
-  </React.StrictMode>,
   document.getElementById("root")
 );
 
