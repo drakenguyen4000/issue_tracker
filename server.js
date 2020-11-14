@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const issues = require("./routes/api/issues");
 const user = require("./routes/api/user");
@@ -8,18 +7,6 @@ const comment = require("./routes/api/comment");
 const app = express();
 const cookieParser = require("cookie-parser");
 const path = require("path");
-
-// app.use((req, res, next) => {
-//   res.set({
-//       "Access-Control-Allow-Origin": "*",
-//       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-//       "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
-//       "Content-Security-Policy": "default-src *",
-//       "X-Content-Security-Policy": "default-src *",
-//       "X-WebKit-CSP": "default-src *"
-//   })
-//   next();
-// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -44,27 +31,13 @@ app.use("/issues", issues);
 app.use("/", user);
 app.use("/issues", comment);
 
-// // Serve static assets if in production
-// if (process.env.NODE_ENV === 'production') {
-//   // Set static folder
-//   app.use(express.static('client/build'));
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
 
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-// }
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
-}
-
-else {
-  app.use(express.static(path.join(__dirname, '/client/public')));
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
