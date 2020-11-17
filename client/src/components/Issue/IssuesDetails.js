@@ -40,7 +40,7 @@ const Details = (props) => {
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
-        history.push("/issues");
+        history.push("/dashboard");
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -74,7 +74,7 @@ const Details = (props) => {
       .delete(`/issues/${props.match.params.id}`)
       .then((response) => {
         msgContext.setMessage(response.data.message);
-        history.push("/list");
+        history.push("/dashboard");
       })
       .catch((err) => msgContext.setMessage(err.response.data.message));
   };
@@ -111,8 +111,7 @@ const Details = (props) => {
               ) : null}
             </div>
             <h2>Issue Details</h2>
-            {/* <Table className="details-table table"> */}
-              <IssuesItem details={issue.details} />
+            <IssuesItem details={issue.details} />
             <div className="status-assign-group">
               {currentUser._id === issue.details.assigned.id ||
               currentUser.jobtitle === "Lead Engineer" ? (

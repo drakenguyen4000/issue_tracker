@@ -11,7 +11,7 @@ const UnPrivateRoute = ({ component: Component, ...rest }) => {
         if (isAuthenticated) {
           return (
             <Redirect
-              to={{ pathname: "/issues", state: { from: props.location } }}
+              to={{ pathname: "/dashboard", state: { from: props.location } }}
             />
           );
         }

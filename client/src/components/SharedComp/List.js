@@ -25,7 +25,7 @@ const List = (props) => {
       props.gen.list[0] ? (
         <div>
           <h2>{props.title}</h2>
-          <Table className="table mb-5" striped bordered size="sm">
+          <Table className="mb-5" striped bordered size="sm">
             <thead className="thead text-light">
               <tr>
                 <th scope="row"></th>

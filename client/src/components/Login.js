@@ -23,7 +23,7 @@ const Login = () => {
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        history.push("/issues");
+        history.push("/dashboard");
       } else {
         const message = { msgBody: "Login failed!", msgError: true };
         msgContext.setMessage(message);
@@ -57,7 +57,7 @@ const Login = () => {
             required
           />
         </FormGroup>
-        <Button>Login</Button>
+        <Button size="sm" className="btn-style">Login <i class="fas fa-unlock"></i></Button>
       </Form>
     </Container>
   );

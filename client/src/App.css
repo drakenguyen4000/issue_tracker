@@ -54,6 +54,17 @@ h2 {
   height: 40px;
 }
 
+/*---generic----*/
+
+Label {
+  font-weight: 600;
+  color: rgb(76, 80, 94);
+}
+
+i {
+  margin-left: 5%;
+}
+
 /*----Landing---*/
 .landing {
   background-image: url("./images/machines.jpg");
@@ -114,12 +125,21 @@ h3 {
 
 .search a {
   color: #85a4f8;
-
 }
 
 .search a i {
   margin-top: 15%;
   margin-left: 15%;
+}
+
+/*---register---*/
+.register_code {
+  margin-left: 4%;
+  padding: 1% 3%;
+  border: none;
+}
+.register_code:hover {
+  color: rgb(80, 80, 80);
 }
 
 /*--button--*/
@@ -179,41 +199,65 @@ h3 {
 }
 
 /*---issue item---*/
-
 .details-table {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.issues-item {
-  border: 1px rgb(221, 221, 221) solid;
-  margin: 0 10px;
+.tb-column {
+  margin-top: 2%;
 }
 
-.issues-item table tr th {
-  width: 30%;
-}
-
-.issues-item table {
+.tb-column div {
+  display: flex;
   width: 450px;
+  padding: 2% 2%;
+  border-bottom: 0.5px solid #b9cbfd;
 }
 
-.issues-item table:nth-child(2) {
-  border: 1px rgb(221, 221, 221) solid;
+.tb-column:nth-child(1) div:nth-child(9) {
+  border-bottom: none;
 }
 
-.issues-item table:nth-child(2) tr td img {
+.tb-column div span:nth-child(1) {
+  width: 30%;
+  font-weight: bold;
+}
+.tb-column div span:nth-child(2) {
+  width: 70%;
+}
+.details-table .table-body {
+  border: 1px #b9cbfd solid;
+  padding: 0 10px;
+}
+
+.details-table .table-body:nth-child(2) div span:nth-child(1) {
+  width: 20%;
+}
+
+.details-table .table-body:nth-child(2) div span:nth-child(2) {
+  width: 80%;
+}
+
+.details-table .table-body:nth-child(2) div span img {
   max-width: 320px;
+  max-height: 260px;
 }
 
-.issues-item table:nth-child(2) tr td {
+/*table column 2*/
+.details-table .table-body:nth-child(2) div span {
   max-width: 400px;
   height: 260px;
-  padding-bottom: 20px;
+}
+/*Summary section*/
+.details-table .table-body:nth-child(2) div:nth-child(2) {
+  border-bottom: none;
 }
 
 /*---status---*/
 .status-assign-group {
+  margin-top: 2%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -310,24 +354,26 @@ h3 {
     text-align: left;
     margin-left: 4%;
   }
-
   .nav6:hover {
     border: none;
     text-decoration: underline;
     background: none;
-
   }
-
-  .issues-item table {
+  .table-body {
+    width: 100%;
+  }
+  .tb-column div {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 500px) {
-
-  .issues-item {
-    width: 420px;
-    margin-left: 4%;
+  .details-table .table-body {
+    font-size: .8rem !important;
+    font-weight: 500;
+  } 
+  .details-table .table-body:nth-child(2) .tb-column div span:nth-child(2) img {
+    width: 270px;
   }
   .status-group {
     margin-left: 5%;
@@ -339,13 +385,10 @@ h3 {
   .status-assign-group form button {
     font-size: 0.8rem;
     width: 100px;
-  }   
-  .thead {
-    font-size: .6rem;
   }
   .table tbody td {
     font-size: .5rem !important;
     font-weight: 500;
     height: 40px;
-  }
+  } 
 }

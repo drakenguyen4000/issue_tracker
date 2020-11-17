@@ -5,7 +5,7 @@ import List from "../SharedComp/List";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
 
-const IssuesList = () => {
+const IssuesDashboard = () => {
   const [issue, setIssue] = useState({
     list: [],
     isLoading: true,
@@ -29,15 +29,15 @@ const IssuesList = () => {
     <div>
       <Container className="d-flex justify-content-end">
         <Link
-          to={`/report`}
+          to={`/issues`}
           className="btn btn-danger btn-sm mr-2 btn-report btn-style"
         >
           Report Issue <i className="fas fa-bug"></i>
         </Link>
       </Container>
-      <List title="Issues Tracking List" gen={issue} />
+      <List title="Issues Dashboard" gen={issue} />
     </div>
   );
 };
 
-export default IssuesList;
+export default IssuesDashboard;

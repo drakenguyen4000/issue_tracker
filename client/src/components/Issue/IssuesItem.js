@@ -15,76 +15,76 @@ const IssuesItem = (props) => {
   };
 
   return (
-    <table className="details-table" style={{border: "1px solid gray"}}>
-      <tbody className="row issues-item">
-        <td className=" table">
-        <tr>
-          <th>Tile</th>
-          <td>{props.details.title}</td>
-        </tr>
-        <tr>
-          <th>Project</th>
-          <td>{props.details.project}</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td className={`font-weight-bold ${getStyle(props)}`}>
-            {props.details.status}
-          </td>
-        </tr>
-        <tr>
-          <th>Type</th>
-          <td>{props.details.type}</td>
-        </tr>
-        <tr>
-          <th>Priority</th>
-          <td>{props.details.priority}</td>
-        </tr>
-        <tr>
-          <th>Reported By</th>
-          <td>
-            <Link to={`/user/${props.details.reportedBy.id}`}>
-              {props.details.reportedBy.username}
-            </Link>
-          </td>
-        </tr>
-        <tr>
-          <th>Assigned To</th>
-          {props.details.assigned.username !== "n/a" ? (
-            <td>
-              <Link to={`/user/${props.details.assigned.id}`}>
-                {props.details.assigned.username}
+    <div className="details-table">
+      <div className="table-body">
+        <div className="tb-column">
+          <div>
+            <span>Tile</span>
+            <span>{props.details.title}</span>
+          </div>
+          <div>
+            <span>Project</span>
+            <span>{props.details.project}</span>
+          </div>
+          <div>
+            <span>Status</span>
+            <span className={`font-weight-bold ${getStyle(props)}`}>
+              {props.details.status}
+            </span>
+          </div>
+          <div>
+            <span>Type</span>
+            <span>{props.details.type}</span>
+          </div>
+          <div>
+            <span>Priority</span>
+            <span>{props.details.priority}</span>
+          </div>
+          <div>
+            <span>Reported By</span>
+            <span>
+              <Link to={`/user/${props.details.reportedBy.id}`}>
+                {props.details.reportedBy.username}
               </Link>
-            </td>
-          ) : (
-            <td>{props.details.assigned.username}</td>
-          )}
-        </tr>
-        <tr>
-          <th>Created</th>
-          <td>{props.details.created.substring(0, 10)}</td>
-        </tr>
-        <tr>
-          <th>Deadline</th>
-          <td>{props.details.deadline.substring(0, 10)}</td>
-        </tr>
-        </td>
-      </tbody>
-      < tbody>
-        <td className="table">
-        <tr>
-          <th>Image</th>
-          <td>
-            <img src={props.details.image[0].image} alt="None provided" />
-          </td>
-        </tr>
-        <tr>
-          <th>Summary</th>
-          <td>{props.details.summary}</td>
-        </tr>
-        </td>
-      </tbody>
-    </table>
+            </span>
+          </div>
+          <div>
+            <span>Assigned To</span>
+            {props.details.assigned.username !== "n/a" ? (
+              <span>
+                <Link to={`/user/${props.details.assigned.id}`}>
+                  {props.details.assigned.username}
+                </Link>
+              </span>
+            ) : (
+              <span>{props.details.assigned.username}</span>
+            )}
+          </div>
+          <div>
+            <span>Created</span>
+            <span>{props.details.created.substring(0, 10)}</span>
+          </div>
+          <div>
+            <span>Deadline</span>
+            <span>{props.details.deadline.substring(0, 10)}</span>
+          </div>
+        </div>
+      </div>
+      <div className="table-body">
+        <div className="tb-column">
+          <div>
+            <span>Image</span>
+            <span>
+              <img src={props.details.image[0].image} alt="None provided" />
+            </span>
+          </div>
+          <div>
+            <span>Summary</span>
+            <span>{props.details.summary}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

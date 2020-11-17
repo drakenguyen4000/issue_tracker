@@ -63,7 +63,7 @@ const IssuesReport = () => {
       .post("/issues", formData)
       .then((response) => {
         msgContext.setMessage(response.data.message);
-        history.push("/issues");
+        history.push("/dashboard");
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
@@ -170,7 +170,7 @@ const IssuesReport = () => {
             </div>
           </FormGroup>
           <Button className="btn-style mb-5" size="sm" color="dark">
-            Submit
+            Submit <i class="fas fa-arrow-alt-circle-right"></i>
           </Button>
         </Form>
       </Container>

@@ -43,12 +43,12 @@ const Navbar = () => {
       <>
         <ul className="navbar-nav mr-auto">
           <li className="nav-bar item">
-            <Link to="/issues" className="nav-link nav6 mr-4">
-              Issues List
+            <Link to="/dashboard" className="nav-link nav6 mr-4">
+              Dashboard
             </Link>
           </li>
           <li className="nav-bar item">
-            <Link to="/report" className="nav-link  nav6 mr-3">
+            <Link to="/issues" className="nav-link  nav6 mr-3">
               Report Issue
             </Link>
           </li>

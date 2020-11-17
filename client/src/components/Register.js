@@ -23,6 +23,11 @@ const Register = () => {
     };
   }, []);
 
+  const code = () => {
+    const message = { msgBody: "Admin Code: superdev2099 ---- User Code: tumen10", msgError: false };
+    msgContext.setMessage(message);
+  }
+
   const handleChange = (e) => {
     const { name, type } = e.target;
     type === "file"
@@ -111,7 +116,8 @@ const Register = () => {
         </FormGroup>
         <FormGroup className="row">
           <div className="col-md-6">
-            <Label>Registration Code</Label>
+            <Label>Registration Code</Label> 
+            <Button color="dark" className="register_code" onClick={code} size="sm"><i class="fas fa-question"></i></Button>
             <Input
               type="text"
               onChange={handleChange}
@@ -134,7 +140,7 @@ const Register = () => {
           </div>
         </FormGroup>
         <Button color="dark" size="sm" className="btn-style mb-5">
-          Submit
+          Submit <i class="fas fa-arrow-alt-circle-right"></i>
         </Button>
       </Form>
     </Container>
