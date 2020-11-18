@@ -182,7 +182,7 @@ const IssuesEdit = (props) => {
                   />
                 </div>
               </FormGroup>
-              <Button color="dark" size="sm" className="btn-style mb-5">Submit <i class="fas fa-arrow-alt-circle-right"></i></Button>
+              <Button color="dark" size="sm" className="btn-style mb-5">Submit <i className="fas fa-arrow-alt-circle-right"></i></Button>
             </Form>
           </div>
         )}

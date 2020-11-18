@@ -57,7 +57,7 @@ const Login = () => {
             required
           />
         </FormGroup>
-        <Button size="sm" className="btn-style">Login <i class="fas fa-unlock"></i></Button>
+        <Button size="sm" className="btn-style">Login <i className="fas fa-unlock"></i></Button>
       </Form>
     </Container>
   );

@@ -6,7 +6,7 @@ const passportConfig = require("../../passport");
 const JWT = require("jsonwebtoken");
 const Image = require("../../models/Image");
 const User = require("../../models/User");
-const { json } = require("body-parser");
+// const { json } = require("body-parser");
 var multer = require("multer");
 const resData = require("../../functions/functions");
 

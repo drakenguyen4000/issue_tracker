@@ -241,8 +241,8 @@ h3 {
 }
 
 .details-table .table-body:nth-child(2) div span img {
-  max-width: 320px;
-  max-height: 260px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*table column 2*/
@@ -365,15 +365,18 @@ h3 {
   .tb-column div {
     width: 100%;
   }
+  .comment-form {
+    padding: 0 3%;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .thead th {
+    font-size: .8rem;
+  }
   .details-table .table-body {
     font-size: .8rem !important;
     font-weight: 500;
-  } 
-  .details-table .table-body:nth-child(2) .tb-column div span:nth-child(2) img {
-    width: 270px;
   }
   .status-group {
     margin-left: 5%;

@@ -70,6 +70,7 @@ const Comment = (props) => {
     return comment.display.map((post) => {
       return (
         <CommentList
+          key={post._id}
           issueId={props.issue.details._id}
           text={post}
           commentDelete={deleteComment}

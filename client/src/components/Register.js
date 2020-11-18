@@ -117,7 +117,7 @@ const Register = () => {
         <FormGroup className="row">
           <div className="col-md-6">
             <Label>Registration Code</Label> 
-            <Button color="dark" className="register_code" onClick={code} size="sm"><i class="fas fa-question"></i></Button>
+            <Button color="dark" className="register_code" onClick={code} size="sm"><i className="fas fa-question"></i></Button>
             <Input
               type="text"
               onChange={handleChange}
@@ -140,10 +140,11 @@ const Register = () => {
           </div>
         </FormGroup>
         <Button color="dark" size="sm" className="btn-style mb-5">
-          Submit <i class="fas fa-arrow-alt-circle-right"></i>
+          Submit <i className="fas fa-arrow-alt-circle-right"></i>
         </Button>
       </Form>
     </Container>
   );
 };
+
 export default Register;

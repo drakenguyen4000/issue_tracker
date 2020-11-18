@@ -80,7 +80,7 @@ const IssuesAssign = (props) => {
                 color="info"
                 onClick={assignDev}
               >
-                Assign <i class="fas fa-user-edit"></i>
+                Assign <i className="fas fa-user-edit"></i>
               </Button>
             </FormGroup>
           </Form>

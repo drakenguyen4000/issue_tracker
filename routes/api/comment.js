@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Issue = require("../../models/Issue");
-const User = require("../../models/User");
+// const User = require("../../models/User");
 const Comment = require("../../models/Comment");
 const { json } = require("body-parser");
-const { response } = require("express");
+// const { response } = require("express");
 const resData = require("../../functions/functions");
   
 //Get Comments   

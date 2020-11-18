@@ -18,9 +18,9 @@ const CommentList = (props) => {
         <div className="row">
           <div className="col-md-3">
             <h6 className="card-title text-info">
-              <a href={`/user/${props.text.author._id}`}>
+              <Link to={`/user/${props.text.author._id}`}>
                 {props.text.author.username}
-              </a>
+              </Link>
             </h6>
             <img
               src={`${props.text.author.avatar.image}`}
@@ -41,7 +41,7 @@ const CommentList = (props) => {
                   >
                     Edit
                   </Link>
-                  <Link
+                  <Link to=""
                     onClick={onDelete}
                     className="btn btn-outline-danger btn-sm mr-2"
                   >

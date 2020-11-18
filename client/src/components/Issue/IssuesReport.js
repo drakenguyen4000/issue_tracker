@@ -170,7 +170,7 @@ const IssuesReport = () => {
             </div>
           </FormGroup>
           <Button className="btn-style mb-5" size="sm" color="dark">
-            Submit <i class="fas fa-arrow-alt-circle-right"></i>
+            Submit <i className="fas fa-arrow-alt-circle-right"></i>
           </Button>
         </Form>
       </Container>

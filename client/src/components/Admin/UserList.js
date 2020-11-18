@@ -25,7 +25,7 @@ const UserList = (props) => {
         <div>
           <Link to={`/user/${props.profile._id}`}>
             <Button className="btn-style" size="sm" color="primary">
-              Profile <i class="fas fa-user"></i>
+              Profile <i className="fas fa-user"></i>
             </Button>
           </Link>
           {/* //Only admin has option to delete user.  Admin cannot delete their own account */}
@@ -37,7 +37,7 @@ const UserList = (props) => {
               color="danger"
               onClick={deleteUser}
             >
-              Delete <i class="fas fa-trash"></i>
+              Delete <i className="fas fa-trash"></i>
             </Button>
           ) : null}
         </div>

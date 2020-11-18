@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const Issue = require("../../models/Issue");
 const Image = require("../../models/Image");
-const { json } = require("body-parser");
+// const { json } = require("body-parser");
 var multer = require("multer");
 const resData = require("../../functions/functions");
 

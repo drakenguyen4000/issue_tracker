@@ -17,7 +17,7 @@ const Message = () => {
   const { message } = useContext(MsgContext);
   return message ? (
     <Alert color={getStyle(message)} className="alert">
-     {message.msgError ? <i class="fas fa-times-circle"></i> : <i class="fas fa-check-square"></i>} {message.msgBody}
+     {message.msgError ? <i className="fas fa-times-circle"></i> : <i className="fas fa-check-square"></i>} {message.msgBody}
     </Alert>
   ) : null;
 };

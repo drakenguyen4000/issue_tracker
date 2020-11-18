@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import {
-  Container,
-  Table,
-  Button,
-  Form,
-  Input,
-  Label,
-  FormGroup,
-} from "reactstrap";
+import { Container, Button, Form, Input, Label, FormGroup } from "reactstrap";
 import { Link } from "react-router-dom";
 import Loading from "../Loading";
 import Comment from "../Comment/Comment";
