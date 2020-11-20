@@ -256,11 +256,17 @@ h3 {
   border-bottom: none;
 }
 
+.wrapper {
+  background: lightblue;
+}
+
 /*---status---*/
 .status-assign-group {
   margin-top: 2%;
   display: flex;
   flex-wrap: wrap;
+  background: green;
+  width: 100%;
 }
 
 .status-group {
@@ -360,12 +366,12 @@ h3 {
     text-decoration: underline;
     background: none;
   }
-  .table-body {
+  /* .table-body {
     width: 100%;
   }
   .tb-column div {
     width: 100%;
-  }
+  } */
   .comment-form {
     padding: 0 3%;
   }
@@ -373,19 +379,20 @@ h3 {
 
 @media only screen and (max-width: 500px) {
   .thead th {
-  font-size: 70%;
+    font-size: 60%;
+    color: green;
   }
   Table tbody td {
-    font-size: 55% !important;
+    font-size: 50% !important;
     font-weight: 500;
     height: 40px;
   }
   .details-table .table-body {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 500;
   }
   .status-group {
-    margin-left: 5%;
+    margin-left: 3%;
   }
   .status-group label {
     font-size: 0.9rem;

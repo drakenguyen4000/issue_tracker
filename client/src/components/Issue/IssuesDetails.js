@@ -74,7 +74,7 @@ const Details = (props) => {
   //Tenary opeartor to check if axios data loaded into state before calling on table.  Error thrown because substring method will getting undefined because state was undefined.
   return (
     <div>
-      <Container>
+      <Container className="wrapper">
         {issue.isLoading === "true" ? (
           <Loading message="Loading..." />
         ) : (
