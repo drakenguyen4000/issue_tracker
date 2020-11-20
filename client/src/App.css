@@ -183,7 +183,6 @@ h3 {
   color: white;
   background: linear-gradient(to right, #c0d6f5, #a6c4f1);
   text-shadow: 1px 1px 1px black;
-  font-size: 80%;
 }
 
 /*---Message---*/
@@ -373,11 +372,16 @@ h3 {
 }
 
 @media only screen and (max-width: 500px) {
-  /* .thead th {
-    font-size: .7rem;
-  } */
+  .thead th {
+  font-size: 70%;
+  }
+  Table tbody td {
+    font-size: 55% !important;
+    font-weight: 500;
+    height: 40px;
+  }
   .details-table .table-body {
-    font-size: .8rem !important;
+    font-size: .8rem;
     font-weight: 500;
   }
   .status-group {
@@ -391,9 +395,4 @@ h3 {
     font-size: 0.8rem;
     width: 100px;
   }
-  .table tbody td {
-    font-size: .5rem !important;
-    font-weight: 500;
-    height: 40px;
-  } 
 }

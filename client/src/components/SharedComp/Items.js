@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Items = (props) => {
   return (
-    <tr>
+    <tr className="table-row">
       <td className="search">
         <Link to={`/issues/${props.issue._id}`}>
           <i className="fas fa-search fa-lg"></i>
