@@ -128,8 +128,8 @@ h3 {
 }
 
 .search a i {
-  margin-top: 15%;
-  margin-left: 15%;
+  margin: 15% 0 0 15%;
+  font-size: 160%;
 }
 
 /*---register---*/
@@ -269,17 +269,19 @@ h3 {
 /* ---assign---*/
 .assign-group {
   margin-left: 2%;
-  width: 400px;
+  width: 355px;
   display: flex;
+  background: green;
 }
 
 .assign-group button {
   align-self: center;
 }
 
-.assign {
-  max-width: 230px;
-  margin-right: 18px;
+.assign-input {
+  /* max-width: 230px; */
+  max-width: 58%;
+  margin-right: 4%;
 }
 
 /*---profile---*/
@@ -385,13 +387,20 @@ h3 {
   }
   .status-group {
     margin-left: 5%;
+    font-size: 80%;
   }
   .status-group label {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
+    /* color: green; */
     margin-right: 1px;
   }
   .status-assign-group form button {
     font-size: 0.8rem;
     width: 100px;
+  }
+  .assign-group {
+    margin-left: -10px;
+    /* width: 300px; */
+    display: flex;
   }
 }

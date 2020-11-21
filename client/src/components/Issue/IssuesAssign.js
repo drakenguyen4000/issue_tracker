@@ -59,7 +59,7 @@ const IssuesAssign = (props) => {
                 type="select"
                 name="assigned"
                 onChange={onChange}
-                className="assign"
+                className="assign-input"
               >
                 <option value={encodeURIComponent(JSON.stringify(""))}>
                   --Assign Developer--
