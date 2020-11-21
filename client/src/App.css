@@ -388,9 +388,10 @@ h3 {
   .status-group {
     margin-left: 5%;
     font-size: 80%;
+    /* background: blue; */
   }
   .status-group label {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     /* color: green; */
     margin-right: 1px;
   }
@@ -399,8 +400,16 @@ h3 {
     width: 100px;
   }
   .assign-group {
-    margin-left: -10px;
-    /* width: 300px; */
-    display: flex;
+    margin-left: -15px;
+    width: 320px;
+  }
+  .assign-input {
+    font-size: .9rem;
+    /* background: pink; */
+    /* color: blue; */
+  }
+  .assign-group Button {
+    background: orange;
+    margin-right: 0;
   }
 }
