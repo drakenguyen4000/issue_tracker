@@ -271,7 +271,6 @@ h3 {
   margin-left: 2%;
   width: 355px;
   display: flex;
-  background: green;
 }
 
 .assign-group button {
@@ -393,23 +392,26 @@ h3 {
   .status-group label {
     font-size: 0.7rem;
     /* color: green; */
-    margin-right: 1px;
+    /* margin-right: 1px; */
   }
   .status-assign-group form button {
     font-size: 0.8rem;
-    width: 100px;
+    width: 88px;
+    /* height: 28px; */
   }
   .assign-group {
     margin-left: -15px;
     width: 320px;
   }
   .assign-input {
-    font-size: .9rem;
+    font-size: 80%; 
     /* background: pink; */
     /* color: blue; */
   }
   .assign-group Button {
     background: orange;
     margin-right: 0;
+    /* color: blue; */
+    /* font-size: 10px !important;  */
   }
 }
