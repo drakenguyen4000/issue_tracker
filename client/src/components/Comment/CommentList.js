@@ -27,28 +27,32 @@ const CommentList = (props) => {
               className="small-avatar"
               alt="author"
             />
-            <div className="comment-jobtitle">
-              {props.text.author.jobtitle}
-            </div>
+            <div className="comment-jobtitle">{props.text.author.jobtitle}</div>
           </div>
           <div className="col-md-9 comment-text border">
             <div className="row d-flex justify-content-end mt-3">
-              {currentUser._id === author._id || currentUser.role === "admin" ? (
-                <div>
+              <span>
+                {currentUser._id === author._id ? (
                   <Link
                     to={`/issues/${props.issueId}/comments/${props.text._id}/edit`}
                     className="btn btn-outline-warning btn-sm mr-2"
                   >
                     Edit
                   </Link>
-                  <Link to=""
+                ) : null}
+              </span>
+              <span>
+                {currentUser._id === author._id ||
+                currentUser.role === "admin" ? (
+                  <Link
+                    to=""
                     onClick={onDelete}
                     className="btn btn-outline-danger btn-sm mr-2"
                   >
                     Delete
                   </Link>
-                </div>
-              ) : null}
+                ) : null}
+              </span>
             </div>
             <div className="row d-flex justify-content-start pl-4">
               <p className="comment-date">
