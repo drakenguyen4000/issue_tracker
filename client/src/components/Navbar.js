@@ -24,12 +24,12 @@ const Navbar = () => {
       <>
         <ul className="navbar-nav mr-auto">
           <li className="nav-bar item">
-            <Link to="/login" className="nav-link nav6">
+            <Link to="/login" className="nav-link main-link">
               Login
             </Link>
           </li>
           <li className="nav-bar item">
-            <Link to="/register" className="nav-link nav6">
+            <Link to="/register" className="nav-link main-link">
               Register
             </Link>
           </li>
@@ -43,22 +43,22 @@ const Navbar = () => {
       <>
         <ul className="navbar-nav mr-auto">
           <li className="nav-bar item">
-            <Link to="/dashboard" className="nav-link nav6 mr-4">
+            <Link to="/dashboard" className="nav-link main-link mr-4">
               Dashboard
             </Link>
           </li>
           <li className="nav-bar item">
-            <Link to="/issues" className="nav-link  nav6 mr-3">
+            <Link to="/issues" className="nav-link  main-link mr-3">
               Report Issue
             </Link>
           </li>
           <li className="nav-bar item">
-            <Link to="/user" className="nav-link nav6 ">
+            <Link to="/user" className="nav-link main-link ">
               Team
             </Link>
           </li>
           <li className="nav-bar item">
-            <Link to="" onClick={onClick} className="nav-link nav6 ">
+            <Link to="" onClick={onClick} className="nav-link main-link ">
               Logout
             </Link>
           </li>
