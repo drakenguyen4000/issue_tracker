@@ -9,7 +9,9 @@ const Items = (props) => {
           <i className="fas fa-search fa-lg"></i>
         </Link>
       </td>
-      <td>{props.issue.title}</td>
+      <td>
+        <Link to={`/issues/${props.issue._id}`}>{props.issue.title}</Link>
+      </td>
       <td>{props.issue.status}</td>
       <td>{props.issue.type}</td>
       <td>{props.issue.project}</td>
