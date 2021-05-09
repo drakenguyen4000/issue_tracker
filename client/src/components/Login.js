@@ -36,7 +36,7 @@ const Login = () => {
       <h2 className="text-center">Login</h2>
       <Form className="col-lg-6 mx-auto" onSubmit={onSubmit}>
         <FormGroup>
-          <Label>Username</Label>
+          <Label>Username (Alex)</Label>
           <Input
             type="text"
             name="username"
@@ -47,7 +47,7 @@ const Login = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label>Password</Label>
+          <Label>Password (bug2727)</Label>
           <Input
             type="password"
             name="password"
