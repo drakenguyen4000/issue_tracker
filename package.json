@@ -1,10 +1,6 @@
 {
   "name": "issuetracker",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/drakenguyen4000/issue_tracker.git"
-  },
   "description": "Issue Tracker",
   "main": "server.js",
   "scripts": {
