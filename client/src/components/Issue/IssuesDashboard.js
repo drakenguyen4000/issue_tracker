@@ -22,9 +22,9 @@ const IssuesDashboard = () => {
       .catch(() => history.push("/"));
   }, []);
 
-  //Using Loading message if axios is taking time
+  //Use Loading message if axios is taking time
   //Take list and map over items to display each items
-  //Tenary opeartor to check if axios data loaded into state before calling on table.  Error thrown because substring method will getting undefined because state was undefined.
+  //Check if axios data loaded into state before calling on table.  Otherwise, error will be thrown since substring will be pulling data not in state yet.  
   return (
     <div>
       <Container className="d-flex justify-content-end">

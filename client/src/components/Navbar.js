@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Container } from "reactstrap";
 import AuthService from "../services/AuthService";
 import { AuthContext } from "../context/AuthContext";
 import history from "../history";
+import { Container, Collapse, NavbarToggler } from "reactstrap";
 
 const Navbar = () => {
-  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
-    AuthContext
-  );
+  const { user, setUser, isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   const onClick = () => {
     AuthService.logout().then((data) => {
       if (data.success) {
@@ -78,27 +80,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-dark navbar-expand-lg">
-      <Container>
-        <Link to="/" className="navbar-brand">
-          <strong>ISSUE</strong> TRACKER
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
-        </div>
-      </Container>
-    </nav>
+    <div>
+      <nav className="navbar navbar-dark navbar-expand-lg">
+        <Container>
+          <Link to="/" className="navbar-brand">
+            <strong>ISSUE</strong> TRACKER
+          </Link>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            {!isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+          </Collapse>
+        </Container>
+      </nav>
+    </div>
   );
 };
 
