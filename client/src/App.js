@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import IssuesReport from "./components/Issue/IssuesReport";
 import IssuesDashboard from "./components/Issue/IssuesDashboard";
 import IssuesEdit from "./components/Issue/IssuesEdit";
@@ -20,7 +20,7 @@ import Message from "./components/Message";
 
 const App = () => {
     return (
-      <HashRouter history={history}>
+      <Router history={history}>
         <Navbar />
         <Message />
           <br/>
@@ -34,7 +34,7 @@ const App = () => {
           <PrivateRoute roles={["admin", "user"]} path="/user/:id" exact component={UserProfile} />
           <UnPrivateRoute path="/register" exact component={Register} />
           <UnPrivateRoute path="/login" exact component={Login} />
-      </HashRouter> 
+      </Router> 
     )  
 }
 
