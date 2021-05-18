@@ -8,30 +8,19 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link href="./critical.css" rel="stylesheet">
+  <link href="./critical.css" rel="stylesheet" type="text/css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@400&display=swap" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
   <title>Issue Tracker</title>
 </head>
 <body>
   <div id="root"></div>
-  <noscript id="deferred-styles">
+  <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@400&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </noscript>
-  <script>
-    var loadDeferredStyles = function () {   
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-    };
-    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-    if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
-    else window.addEventListener('load', loadDeferredStyles);
-</script>
 </body>
 
 </html>
