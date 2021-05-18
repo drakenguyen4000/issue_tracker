@@ -36,10 +36,11 @@ const Login = () => {
       <h2 className="text-center">Login</h2>
       <Form className="col-lg-6 mx-auto" onSubmit={onSubmit}>
         <FormGroup>
-          <Label>Username (Alex)</Label>
+          <Label for="login-username">Username (Alex)</Label>
           <Input
             type="text"
             name="username"
+            id="login-username"
             onChange={handleChange}
             value={user.username}
             maxLength="25"
@@ -47,16 +48,18 @@ const Login = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label>Password (bug2727)</Label>
+          <Label for="login-password">Password (bug2727)</Label>
           <Input
             type="password"
             name="password"
+            id="login-password"
             onChange={handleChange}
             value={user.password}
             maxLength="25"
             required
           />
         </FormGroup>
+        <div className="login-info">* Please use the above info or register a new account to sign in.</div>
         <Button size="sm" className="btn-style">Login <i className="fas fa-unlock"></i></Button>
       </Form>
     </Container>

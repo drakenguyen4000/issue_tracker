@@ -99,6 +99,14 @@ h3 {
 }
 
 /*---register---*/
+.login-info {
+  background: #cee7ff;
+  padding: 2%;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  font-weight: 500;
+}
+
 .register_code {
   margin-left: 4%;
   padding: 1% 3%;

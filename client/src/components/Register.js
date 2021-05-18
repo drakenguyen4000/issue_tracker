@@ -76,11 +76,12 @@ const Register = () => {
         onSubmit={onSubmit}
       >
         <FormGroup>
-          <Label>Username</Label>
+          <Label for="reg-username">Username</Label>
           <Input
             type="text"
             onChange={handleChange}
             name="username"
+            id="reg-username"
             value={user.username}
             maxLength="12"
             required
@@ -88,11 +89,12 @@ const Register = () => {
         </FormGroup>
         <FormGroup className="row">
           <div className="col-md-6">
-            <Label>Job Title</Label>
+            <Label for="reg-jobtitle">Job Title</Label>
             <Input
               type="select"
               onChange={handleChange}
               name="jobtitle"
+              id="reg-jobtitle"
               value={user.jobtile}
               required
             >
@@ -103,11 +105,12 @@ const Register = () => {
             </Input>
           </div>
           <div className="col-md-6">
-            <Label>Password</Label>
+            <Label for="reg-password">Password</Label>
             <Input
               type="password"
               onChange={handleChange}
               name="password"
+              id="reg-password"
               value={user.password}
               maxLength="12"
               required
@@ -116,19 +119,20 @@ const Register = () => {
         </FormGroup>
         <FormGroup className="row">
           <div className="col-md-6">
-            <Label>Registration Code</Label> 
+            <Label for="register">Registration Code</Label> 
             <Button color="dark" className="register_code" onClick={code} size="sm"><i className="fas fa-question"></i></Button>
             <Input
               type="text"
               onChange={handleChange}
               name="registercode"
+              id="register"
               value={user.registercode}
               maxLength="12"
               required
             />
           </div>
           <div className="col-md-6">
-            <Label>Avatar</Label>
+            <Label for="image">Avatar</Label>
             <Input
               type="file"
               onChange={handleChange}
@@ -139,6 +143,7 @@ const Register = () => {
             />
           </div>
         </FormGroup>
+        <p className="login-info">* Admin - Full rights, including deleting user.<br/>* User - Create, edit, and delete your own comments.</p>
         <Button color="dark" size="sm" className="btn-style mb-5">
           Submit <i className="fas fa-arrow-alt-circle-right"></i>
         </Button>
