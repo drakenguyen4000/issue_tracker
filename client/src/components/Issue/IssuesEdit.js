@@ -94,10 +94,11 @@ const IssuesEdit = (props) => {
               encType="multipart/form-data"
             >
               <FormGroup>
-                <Label>Title</Label>
+                <Label for="title">Title</Label>
                 <Input
                   type="text"
                   name="title"
+                  id="title"
                   defaultValue={edit.details.title}
                   onChange={handleChange}
                   placeholder="Missing Icons"
@@ -106,10 +107,11 @@ const IssuesEdit = (props) => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Project/Product</Label>
+                <Label for="project">Project/Product</Label>
                 <Input
                   type="text"
                   name="project"
+                  id="project"
                   onChange={handleChange}
                   defaultValue={edit.details.project}
                   placeholder="project-4xx"
@@ -118,10 +120,11 @@ const IssuesEdit = (props) => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Summary</Label>
+                <Label for="summary">Summary</Label>
                 <Input
                   type="textarea"
                   name="summary"
+                  id="summary"
                   onChange={handleChange}
                   defaultValue={edit.details.summary}
                   maxLength="500"
@@ -129,7 +132,7 @@ const IssuesEdit = (props) => {
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Upload Image</Label>
+                <Label for="image">Upload Image</Label>
                 <Input
                   type="file"
                   name="image"
@@ -140,10 +143,11 @@ const IssuesEdit = (props) => {
               </FormGroup>
               <FormGroup className="row">
                 <div className="col-md-3">
-                  <Label>Priority</Label>
+                  <Label for="priority">Priority</Label>
                   <Input
                     type="select"
                     name="priority"
+                    id="priority"
                     onChange={handleChange}
                     defaultValue={edit.details.priority}
                     className="priority-input"
@@ -156,10 +160,11 @@ const IssuesEdit = (props) => {
                   </Input>
                 </div>
                 <div className="col-md-4">
-                  <Label>Type</Label>
+                  <Label for="type">Type</Label>
                   <Input
                     type="select"
                     name="type"
+                    id="type"
                     onChange={handleChange}
                     defaultValue={edit.details.type}
                     required
@@ -173,10 +178,11 @@ const IssuesEdit = (props) => {
                   </Input>
                 </div>
                 <div className="col-md-5">
-                  <Label>Deadline</Label>
+                  <Label for="deadline">Deadline</Label>
                   <Input
                     type="date"
                     name="deadline"
+                    id="deadline"
                     onChange={handleChange}
                     defaultValue={edit.details.deadline.substring(0, 10)}
                   />
