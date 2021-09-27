@@ -8,7 +8,7 @@ import { MsgContext } from "../../context/MsgContext";
 
 const UserProfile = (props) => {
   const msgContext = useContext(MsgContext);
-
+  const defaultImage = "https://res.cloudinary.com/dkn4000/image/upload/v1632694602/blank-profile_a7n0vm.png";
   const [profile, setProfile] = useState({
     user: [],
     reportedBy: {
@@ -20,7 +20,7 @@ const UserProfile = (props) => {
     isLoading: true,
   });
 
-  //Grabs issues this developer reported, assigned to, and their user info
+  //Grabs issues this developer reported, assigned to, and their user info.
   useEffect(() => {
     const requestOne = axios.get(`/user/${props.match.params.id}/reportedBy`);
     const requestTwo = axios.get(`/user/${props.match.params.id}/assigned`);
@@ -48,26 +48,26 @@ const UserProfile = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (profile.isLoading) {
+    return (
+      <Container>
+        <Loading message="Loading..." />;
+      </Container>
+    );
+  }
+
   return (
-    <div>
-      {profile.isLoading ? (
-        <Loading message="Loading..." />
-      ) : (
-        <div>
-          <Container>
-            <img
-              className="small-avatar"
-              src={`${profile.user.avatar.image}`}
-              alt="avatar"
-            />
-            <h5>{profile.user.username}</h5>
-            <h6>{profile.user.jobtitle}</h6>
-          </Container>
-          <List title={`Reported`} gen={profile.reportedBy} />
-          <List title={`Assigned`} gen={profile.assigned} />
-        </div>
-      )}
-    </div>
+    <Container>
+      <img
+        className="small-avatar"
+        src={`${profile.user.avatar.image ? profile.user.avatar.image : defaultImage}`}
+        alt="avatar"
+      />
+      <h5>{profile.user.username}</h5>
+      <h6>{profile.user.jobtitle}</h6>
+      <List title={`Reported`} gen={profile.reportedBy} />
+      <List title={`Assigned`} gen={profile.assigned} />
+    </Container>
   );
 };
 

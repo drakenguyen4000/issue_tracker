@@ -11,14 +11,14 @@ const Users = () => {
 
   const [user, setUser] = useState({
     user: [],
-    isLoading: "true",
+    isLoading: true,
   });
 
   useEffect(() => {
     axios
       .get("/user")
       .then((response) => {
-        setUser({ user: response.data, isLoading: "false" });
+        setUser({ user: response.data, isLoading: false });
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
@@ -45,16 +45,14 @@ const Users = () => {
     });
   };
 
+  if (user.isLoading === true) {
+    return <Loading message="Loading..." />;
+  }
+
   return (
     <Container>
-      {user.isLoading === "true" ? (
-        <Loading message="Loading..." />
-      ) : (
-        <div>
-          <h2>Team</h2>
-          <div className="profile-list">{userList()}</div>
-        </div>
-      )}
+      <h2>Team</h2>
+      <div className="profile-list">{userList()}</div>
     </Container>
   );
 };

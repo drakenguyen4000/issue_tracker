@@ -47,45 +47,43 @@ const IssuesAssign = (props) => {
       .catch((err) => msgContext.setMessage(err.response.data.message));
   };
 
+  if (developer.isLoading === true) {
+    return <Loading message="Loading..." />;
+  }
+
   return (
     <Container>
-      {developer.isLoading ? (
-        <Loading message="Loading..." />
-      ) : (
-        <div>
-          <Form>
-            <FormGroup className="assign-group">
-              <Input
-                type="select"
-                name="assigned"
-                onChange={onChange}
-                className="assign-input"
-              >
-                <option value={encodeURIComponent(JSON.stringify(""))}>
-                  --Assign Developer--
+      <Form>
+        <FormGroup className="assign-group">
+          <Input
+            type="select"
+            name="assigned"
+            onChange={onChange}
+            className="assign-input"
+          >
+            <option value={encodeURIComponent(JSON.stringify(""))}>
+              --Assign Developer--
+            </option>
+            {developer.users.map(function (user) {
+              //Take each user info object and turn into string.  Encode as URI so we can pass to onChange function and update in state.
+              const storeUser = encodeURIComponent(JSON.stringify(user));
+              return (
+                <option key={user.username} value={storeUser}>
+                  {user.username}
                 </option>
-                {developer.users.map(function (user) {
-                  //Take each user info object and turn into string.  Encode as URI so we can pass to onChange method and update in state.
-                  const storeUser = encodeURIComponent(JSON.stringify(user));
-                  return (
-                    <option key={user.username} value={storeUser}>
-                      {user.username}
-                    </option>
-                  );
-                })}
-              </Input>
-              <Button
-                className="btn-style"
-                size="sm"
-                color="info"
-                onClick={assignDev}
-              >
-                Assign <i className="fas fa-user-edit"></i>
-              </Button>
-            </FormGroup>
-          </Form>
-        </div>
-      )}
+              );
+            })}
+          </Input>
+          <Button
+            className="btn-style"
+            size="sm"
+            color="info"
+            onClick={assignDev}
+          >
+            Assign <i className="fas fa-user-edit"></i>
+          </Button>
+        </FormGroup>
+      </Form>
     </Container>
   );
 };

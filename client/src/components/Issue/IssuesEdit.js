@@ -9,7 +9,7 @@ const IssuesEdit = (props) => {
   const msgContext = useContext(MsgContext);
   const [edit, setEdit] = useState({
     details: {},
-    isLoading: "true",
+    isLoading: true,
     image: "",
   });
 
@@ -17,7 +17,7 @@ const IssuesEdit = (props) => {
     axios
       .get(`/issues/${props.match.params.id}/edit`)
       .then((response) => {
-        setEdit({ details: response.data, isLoading: "false" });
+        setEdit({ details: response.data, isLoading: false });
       })
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
@@ -80,120 +80,118 @@ const IssuesEdit = (props) => {
       });
   };
 
+  if (edit.isLoading === true) {
+    return <Loading message="Loading..." />;
+  }
+
   return (
-    <div>
-      <Container>
-        {edit.isLoading === "true" ? (
-          <Loading message="Loading..." />
-        ) : (
-          <div>
-            <h2 className="text-center">Edit Issue</h2>
-            <Form
-              className="col-lg-6 mx-auto"
-              onSubmit={onSubmit}
-              encType="multipart/form-data"
+    <Container>
+      <h2 className="text-center">Edit Issue</h2>
+      <Form
+        className="col-lg-6 mx-auto"
+        onSubmit={onSubmit}
+        encType="multipart/form-data"
+      >
+        <FormGroup>
+          <Label for="title">Title</Label>
+          <Input
+            type="text"
+            name="title"
+            id="title"
+            defaultValue={edit.details.title}
+            onChange={handleChange}
+            placeholder="Missing Icons"
+            maxLength="25"
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="project">Project/Product</Label>
+          <Input
+            type="text"
+            name="project"
+            id="project"
+            onChange={handleChange}
+            defaultValue={edit.details.project}
+            placeholder="project-4xx"
+            maxLength="25"
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="summary">Summary</Label>
+          <Input
+            type="textarea"
+            name="summary"
+            id="summary"
+            onChange={handleChange}
+            defaultValue={edit.details.summary}
+            maxLength="500"
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="image">Upload Image</Label>
+          <Input
+            type="file"
+            name="image"
+            id="image"
+            accept="image/*"
+            onChange={handleChange}
+          />
+        </FormGroup>
+        <FormGroup className="row">
+          <div className="col-md-3">
+            <Label for="priority">Priority</Label>
+            <Input
+              type="select"
+              name="priority"
+              id="priority"
+              onChange={handleChange}
+              defaultValue={edit.details.priority}
+              className="priority-input"
+              required
             >
-              <FormGroup>
-                <Label for="title">Title</Label>
-                <Input
-                  type="text"
-                  name="title"
-                  id="title"
-                  defaultValue={edit.details.title}
-                  onChange={handleChange}
-                  placeholder="Missing Icons"
-                  maxLength="25"
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label for="project">Project/Product</Label>
-                <Input
-                  type="text"
-                  name="project"
-                  id="project"
-                  onChange={handleChange}
-                  defaultValue={edit.details.project}
-                  placeholder="project-4xx"
-                  maxLength="25"
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label for="summary">Summary</Label>
-                <Input
-                  type="textarea"
-                  name="summary"
-                  id="summary"
-                  onChange={handleChange}
-                  defaultValue={edit.details.summary}
-                  maxLength="500"
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label for="image">Upload Image</Label>
-                <Input
-                  type="file"
-                  name="image"
-                  id="image"
-                  accept="image/*"
-                  onChange={handleChange}
-                />
-              </FormGroup>
-              <FormGroup className="row">
-                <div className="col-md-3">
-                  <Label for="priority">Priority</Label>
-                  <Input
-                    type="select"
-                    name="priority"
-                    id="priority"
-                    onChange={handleChange}
-                    defaultValue={edit.details.priority}
-                    className="priority-input"
-                    required
-                  >
-                    <option value="">--Select--</option>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                  </Input>
-                </div>
-                <div className="col-md-4">
-                  <Label for="type">Type</Label>
-                  <Input
-                    type="select"
-                    name="type"
-                    id="type"
-                    onChange={handleChange}
-                    defaultValue={edit.details.type}
-                    required
-                  >
-                    <option value="">--Select--</option>
-                    <option value="Bug">Bug</option>
-                    <option value="Feature Request">Feature Request</option>
-                    <option value="Customer Issue">Customer Issue</option>
-                    <option value="Process">Process</option>
-                    <option value="Vulnerability">Vulnerability</option>
-                  </Input>
-                </div>
-                <div className="col-md-5">
-                  <Label for="deadline">Deadline</Label>
-                  <Input
-                    type="date"
-                    name="deadline"
-                    id="deadline"
-                    onChange={handleChange}
-                    defaultValue={edit.details.deadline.substring(0, 10)}
-                  />
-                </div>
-              </FormGroup>
-              <Button color="dark" size="sm" className="btn-style mb-5">Submit <i className="fas fa-arrow-alt-circle-right"></i></Button>
-            </Form>
+              <option value="">--Select--</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </Input>
           </div>
-        )}
-      </Container>
-    </div>
+          <div className="col-md-4">
+            <Label for="type">Type</Label>
+            <Input
+              type="select"
+              name="type"
+              id="type"
+              onChange={handleChange}
+              defaultValue={edit.details.type}
+              required
+            >
+              <option value="">--Select--</option>
+              <option value="Bug">Bug</option>
+              <option value="Feature Request">Feature Request</option>
+              <option value="Customer Issue">Customer Issue</option>
+              <option value="Process">Process</option>
+              <option value="Vulnerability">Vulnerability</option>
+            </Input>
+          </div>
+          <div className="col-md-5">
+            <Label for="deadline">Deadline</Label>
+            <Input
+              type="date"
+              name="deadline"
+              id="deadline"
+              onChange={handleChange}
+              defaultValue={edit.details.deadline.substring(0, 10)}
+            />
+          </div>
+        </FormGroup>
+        <Button color="dark" size="sm" className="btn-style mb-5">
+          Submit <i className="fas fa-arrow-alt-circle-right"></i>
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

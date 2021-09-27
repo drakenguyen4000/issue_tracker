@@ -70,6 +70,7 @@ const Navbar = () => {
             {user.username} [ {user.role} ]
           </Link>
         </li>
+        {/* Checks if avatar image exist */}
         {user.avatar.image ? (
           <li className="nav-bar item">
             <img src={`${user.avatar.image}`} alt="avatar" />

@@ -79,40 +79,40 @@ const Comment = (props) => {
     });
   };
 
+  if (comment.isLoading === true) {
+    return <Loading message="Loading..." />;
+  }
+
   return (
     <Container className="mb-5 pb-5">
-      {comment.isLoading ? (
-        <Loading message="Loading..." />
-      ) : (
-        <div className="row mt-4">
-          <div className="mx-auto card col-lg-8 col-md-11 px-0">
-            <div className="card-header thead">
-              <h2 className="text-center">Discussion</h2>
-            </div>
-            <div>
-              <Form className="comment-form" onSubmit={onSubmit}>
-                <FormGroup>
-                  <Input
-                    type="textarea"
-                    name="post"
-                    onChange={handleChange}
-                    value={comment.post}
-                    maxLength="1000"
-                  />
-                </FormGroup>
-                <div className="d-flex justify-content-end">
-                  <Button className="btn-style" size="sm" color="dark">
-                    Comment <i className="far fa-edit"></i>
-                  </Button>
-                </div>
-              </Form>
-            </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">{commentList()}</li>
-            </ul>
+      <div className="row mt-4">
+        <div className="mx-auto card col-lg-8 col-md-11 px-0">
+          <div className="card-header thead">
+            <h2 className="text-center">Discussion</h2>
           </div>
+          <div>
+            <Form className="comment-form" onSubmit={onSubmit}>
+              <FormGroup>
+                <Input
+                  type="textarea"
+                  name="post"
+                  onChange={handleChange}
+                  value={comment.post}
+                  maxLength="1000"
+                />
+              </FormGroup>
+              <div className="d-flex justify-content-end">
+                <Button className="btn-style" size="sm" color="dark">
+                  Comment <i className="far fa-edit"></i>
+                </Button>
+              </div>
+            </Form>
+          </div>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">{commentList()}</li>
+          </ul>
         </div>
-      )}
+      </div>
     </Container>
   );
 };

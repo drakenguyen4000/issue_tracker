@@ -17,14 +17,12 @@ const CommentEdit = (props) => {
   useEffect(() => {
     axios
       .get(`${props.match.url}`)
-      .then((res) =>
-        setComment({ post: res.data, isLoading: false })
-      )
+      .then((res) => setComment({ post: res.data, isLoading: false }))
       .catch((err) => {
         msgContext.setMessage(err.response.data.message);
         history.goBack();
       });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (e) => {
@@ -54,28 +52,28 @@ const CommentEdit = (props) => {
       });
   };
 
+  if (comment.isLoading === true) {
+    return <Loading message="Loading..." />;
+  }
+
   return (
     <Container>
-      {comment.isLoading ? (
-        <Loading message="Loading..." />
-      ) : (
-        <div>
-          <Form onSubmit={onSubmit} className="comment-form">
-            <h3 className="text-center">Comment</h3>
-            <FormGroup>
-              <Input
-                name="post"
-                type="textarea"
-                defaultValue={comment.post.text}
-                onChange={handleChange}
-                maxLength="1000"
-                className="edit"
-              ></Input>
-            </FormGroup>
-            <Button color="dark" size="sm" className="btn-style mb-5">Submit <i className="fas fa-arrow-alt-circle-right"></i></Button>
-          </Form>
-        </div>
-      )}
+      <Form onSubmit={onSubmit} className="comment-form">
+        <h3 className="text-center">Comment</h3>
+        <FormGroup>
+          <Input
+            name="post"
+            type="textarea"
+            defaultValue={comment.post.text}
+            onChange={handleChange}
+            maxLength="1000"
+            className="edit"
+          ></Input>
+        </FormGroup>
+        <Button color="dark" size="sm" className="btn-style mb-5">
+          Submit <i className="fas fa-arrow-alt-circle-right"></i>
+        </Button>
+      </Form>
     </Container>
   );
 };

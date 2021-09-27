@@ -12,6 +12,37 @@ const CommentList = (props) => {
     props.commentDelete(props);
   };
 
+  const Edit = ({ author, currentUser }) => {
+    //User can only edit their own comment.
+    if (currentUser._id === author._id) {
+      return (
+        <Link
+          to={`/issues/${props.issueId}/comments/${props.text._id}/edit`}
+          className="btn btn-outline-warning btn-sm mr-2"
+        >
+          Edit
+        </Link>
+      );
+    }
+    return null;
+  };
+
+  const Delete = ({ author, currentUser }) => {
+    //User can only delete their own comment.  Admin can delete any comment.
+    if (currentUser._id === author._id || currentUser.role === "admin") {
+      return (
+        <Link
+          to=""
+          onClick={onDelete}
+          className="btn btn-outline-danger btn-sm mr-2"
+        >
+          Delete
+        </Link>
+      );
+    }
+    return null;
+  };
+
   return (
     <div>
       <div className="card-body">
@@ -32,26 +63,10 @@ const CommentList = (props) => {
           <div className="col-md-9 comment-text border">
             <div className="row d-flex justify-content-end mt-3">
               <span>
-                {currentUser._id === author._id ? (
-                  <Link
-                    to={`/issues/${props.issueId}/comments/${props.text._id}/edit`}
-                    className="btn btn-outline-warning btn-sm mr-2"
-                  >
-                    Edit
-                  </Link>
-                ) : null}
+                <Edit currentUser={currentUser} author={author} />
               </span>
               <span>
-                {currentUser._id === author._id ||
-                currentUser.role === "admin" ? (
-                  <Link
-                    to=""
-                    onClick={onDelete}
-                    className="btn btn-outline-danger btn-sm mr-2"
-                  >
-                    Delete
-                  </Link>
-                ) : null}
+                <Delete currentUser={currentUser} author={author} />
               </span>
             </div>
             <div className="row d-flex justify-content-start pl-4">
