@@ -56,7 +56,7 @@ const Comment = (props) => {
 
   const deleteComment = (item) => {
     axios
-      .get(`/issues/${item.issueId}/comments/${item.text._id}`)
+      .delete(`/issues/${item.issueId}/comments/${item.text._id}`)
       .then((res) => {
         setComment({
           display: comment.display.filter((el) => el._id !== item.text._id),

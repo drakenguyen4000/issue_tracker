@@ -113,7 +113,7 @@ router.get("/:id/edit", (req, res, next) => {
 });
 
 //Update Issue Route 
-router.post("/:id", upload.single("image"), (req, res, next) => {
+router.put("/:id", upload.single("image"), (req, res, next) => {
   //Destroy existing image in cloudinary
   Issue.findById(req.params.id, async (err, findIssue) => {
     //Check if user submits image
@@ -172,7 +172,7 @@ router.post("/:id", upload.single("image"), (req, res, next) => {
 });
 
 //Assign Developer - Update Route 
-router.post("/:id/assign", (req, res, next) => {
+router.put("/:id/assign", (req, res, next) => {
   if(req.body.username === undefined ) {
     next("No developer assigned!");
   }
@@ -194,7 +194,7 @@ router.post("/:id/assign", (req, res, next) => {
 });
 
 //Update Project Status - Update Route 
-router.post("/:id/status", (req, res, next) => {
+router.put("/:id/status", (req, res, next) => {
   if(req.body.status === undefined ) {
     next("No status selected!");
   } 

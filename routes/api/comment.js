@@ -70,15 +70,15 @@ router.get("/:id/comments/:comment_id/edit", (req, res, next) => {
     .catch(() => next("Oops, something went wrong!"));
 });
 
-//Update Route
-router.post("/:id/comments/:comment_id", (req, res, next) => {
+//Update Comment 
+router.put("/:id/comments/:comment_id", (req, res, next) => {
   Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment)
     .then(() => resData.message("Comment updated!", res))
     .catch(() => next("Cannot update comment!"));
 });
 
 //Delete Comment
-router.get("/:id/comments/:comment_id", (req, res, next) => {
+router.delete("/:id/comments/:comment_id", (req, res, next) => {
   Comment.findByIdAndRemove(req.params.comment_id, (err, removedComment) => {
     if (err) {
       next("Cannot delete comment!");

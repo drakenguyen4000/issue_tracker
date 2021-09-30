@@ -55,7 +55,7 @@ const Details = (props) => {
       status: issue.status,
     };
     axios
-      .post(`/issues/${props.match.params.id}/status`, data)
+      .put(`/issues/${props.match.params.id}/status`, data)
       .then((response) => {
         setIssue({ details: response.data.record });
         msgContext.setMessage(response.data.message);

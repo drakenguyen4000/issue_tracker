@@ -69,7 +69,7 @@ const IssuesEdit = (props) => {
 
     //All user input tags must have required attribute to prevent User from submitting with missing fields.  Backend Schema setup requires all these properties to be filled.  Node.js will stall if frontend submits inputs with missing fields.
     axios
-      .post(`/issues/${props.match.params.id}`, formData)
+      .put(`/issues/${props.match.params.id}`, formData)
       .then((response) => {
         msgContext.setMessage(response.data.message);
         history.goBack();

@@ -38,7 +38,7 @@ const CommentEdit = (props) => {
       },
     };
     axios
-      .post(
+      .put(
         `/issues/${comment.post.issueId}/comments/${comment.post._id}`,
         data
       )

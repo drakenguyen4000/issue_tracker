@@ -39,7 +39,7 @@ const IssuesAssign = (props) => {
       userId: developer.assigned._id,
     };
     axios
-      .post(`/issues/${props.issue._id}/assign`, data)
+      .put(`/issues/${props.issue._id}/assign`, data)
       .then((response) => {
         props.assignedUpdate(response);
         msgContext.setMessage(response.data.message);
