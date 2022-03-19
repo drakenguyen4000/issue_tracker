@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const port = process.env.PORT || 5000;
 
-//Error Handling
+//Error Handling (next)
 app.use(function (err, req, res, next) {
   res.status(400).json({
     message: { msgBody: err, msgError: true },
