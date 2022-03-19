@@ -21,6 +21,7 @@ const IssuesReport = () => {
     deadline: "",
   });
 
+   //When component starts, update state with user data
   useEffect(() => {
     setIssue({ ...issue, author: user.username, authorId: user._id });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,10 +53,11 @@ const IssuesReport = () => {
       status: issue.status,
       deadline: issue.deadline,
     };
-
     Object.keys(issueList).forEach((key) => {
+    //Creates a new form using the items in IssueList 
       formData.set(key, issueList[key]);
     });
+    //Adds image property and the image file to the new form 
     formData.append("image", issue.image);
 
     //All user input tags must have required attribute to prevent User from submitting with missing fields.  Backend Schema setup requires all these properties to be filled.  Node.js will stall if frontend submits inputs with missing fields.
