@@ -14,7 +14,7 @@
 - I initially built the components using function and class components.  Then to understand hooks I converted all class component to function components using hook.
 
 ### What issues did I run into when building this app?  
-#### Storing and posting image file data to post to the server side to upload into Cloudinary service.  
+#### Storing image file data in a form to post to the server side.
 - Solution: Initially I had used methods learned from a prior course using EJS to post data containing an image file to the server side.  This didn't work for a MERN application.  After a lot of research, trial, and error, I was able to implement it.  Instead of storing the file inside an object and posting it, I created used formData to store the data inside a form.  Then I appended the image file to the new form and added encType="multipart/form-data" attribute to the JSX form. This enabled the users to select images to upload for their profile or reports.  
 
  
