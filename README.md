@@ -1,9 +1,16 @@
 # Issue Tracker (Bug Tracker) - MERN STACK 
 
 ### Project Description
-- This issue/bug tracker application allows a company to create reports to track issues they find in their company's software or project.  
+- This MERN, single-page issue/bug tracker application allows a company to track issues they find in their company's software or project.  
 - This app allows users to report issues/bugs they find, lead engineers to assign users to resolve the issues reported, an assigned user to update the fix status of the issue, and a comment board in each report to allow users to discuss their findings with colleges.  
-- The app uses React, Node, Express, and MongoDB. Backend implements RESTFUL routes.  
+- The app also includes different permission levels, with administrative users at the top being able to delete comments, reports, and even users. Lead engineers with all rights above except deleting users. 
+- These CRUD actions are implemented using REST API routes.
+- The app uses React, Node, Express, and MongoDB. Backend implements RESTFUL routes.   
+
+### Main Code
+- https://github.com/drakenguyen4000/issue_tracker/blob/master/routes/api/issues.js
+- Highlight: The above code handles CRUD operations of issues report.  
+
 ### My motivation for this app?  
 - I wanted to build an app that is unique compared to what's out there.  I felt like a bug tracker would be a unique and useful project.  
 ### Why build this project?
