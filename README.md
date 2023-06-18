@@ -31,5 +31,5 @@
 3. You will also need Node and Visual Studio Code installed.  
    - https://code.visualstudio.com/
    - https://nodejs.org/en/
-4. Once you have the files, open them in Visual Studio Code, open your terminal, type "npm install".  This will install all node packages necessary to run this app.  
-5. To start app, while in the root directory in the terminal, run "npm run dev".  This will start both client and server of you app.
+4. Once you have the files, open them in Visual Studio Code, open your terminal, type "npm install".  This will install all packages for the server side.  In terminal, type "cd client" to change directory. Then type "npm install" to install the dependency packages for the client side.  
+5. To start app, type cd ../ to go to the root directory.  While in the root directory in the terminal, run "npm run dev".  This will start both client and server of you app.
