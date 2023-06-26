@@ -1,6 +1,7 @@
 //models/Issue.js
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const date = require("../functions/functions");
 
 const IssueSchema = new Schema({
   project: {
@@ -58,7 +59,7 @@ const IssueSchema = new Schema({
   },
   created: {
     type: Date,
-    default: Date.now,
+    default: date.getLocalTime()
   },
 });
 
