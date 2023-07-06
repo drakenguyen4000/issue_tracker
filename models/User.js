@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
-const date = require("../functions/functions");
 
 const UserSchema = new Schema({
   username: {
@@ -35,7 +34,7 @@ const UserSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: date.getLocalTime()
+    default: Date.now
   },
 });
 
