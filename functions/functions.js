@@ -1,5 +1,3 @@
-const moment = require("moment-timezone");
-
 module.exports = {
   //Passing data & message to front end
   respond: function (record, message, res) {
