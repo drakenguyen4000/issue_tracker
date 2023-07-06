@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Localtime from '../SharedComp/Localtime';
 
 const Items = (props) => {
   return (
@@ -16,7 +17,7 @@ const Items = (props) => {
       <td>{props.issue.type}</td>
       <td>{props.issue.project}</td>
       <td>{props.issue.priority}</td>
-      <td>{props.issue.created.substring(0, 10)}</td>
+      <td>{Localtime(props.issue.created)}</td>
       <td>{props.issue.deadline.substring(0, 10)}</td>
     </tr>
   );

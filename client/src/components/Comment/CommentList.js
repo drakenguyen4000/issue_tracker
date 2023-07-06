@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Localtime from '../SharedComp/Localtime';
 
 const CommentList = (props) => {
   const { user } = useContext(AuthContext);
@@ -71,7 +72,7 @@ const CommentList = (props) => {
             </div>
             <div className="row d-flex justify-content-start pl-4">
               <p className="comment-date">
-                {props.text.created.substring(0, 10)}
+                {Localtime(props.text.created)}
               </p>
             </div>
             <div className="row p-4">

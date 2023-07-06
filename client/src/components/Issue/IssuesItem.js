@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Localtime from '../SharedComp/Localtime';
 
 const IssuesItem = (props) => {
   const getStyle = (props) => {
@@ -62,7 +63,7 @@ const IssuesItem = (props) => {
           </div>
           <div>
             <span className="cell-label">Created</span>
-            <span className="cell-value">{props.details.created.substring(0, 10)}</span>
+            <span className="cell-value">{Localtime(props.details.created)}</span>
           </div>
           <div>
             <span className="cell-label">Deadline</span>
